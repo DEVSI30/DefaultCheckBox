@@ -2,12 +2,12 @@
 
 namespace DefaultCheckBox.Observer.impl
 {
-    public class StateTxtBoxObserver : StateObserver
+    public class StateTextBoxObserver : StateObserver
     {
         private StateDefaultImpl _state;
         private System.Windows.Forms.TextBox _txtState;
 
-        public StateTxtBoxObserver(StateDefaultImpl state, TextBox txtState)
+        public StateTextBoxObserver(StateDefaultImpl state, TextBox txtState)
         {
             _state = state;
             _state.registerObserver(this);
@@ -17,7 +17,8 @@ namespace DefaultCheckBox.Observer.impl
 
         public void update()
         {
-            string stateText = "";
+            string stateText = "\r\n";
+            stateText += "--------------------[STATE]----------------------------"+ "\r\n";
             stateText += "ChkBoxDefault   : " + _state.ChkBoxDefault + "\r\n";
             stateText += "-------------------------------------------------------"+ "\r\n";
             stateText += "Value           : " + _state.Value + "\r\n";

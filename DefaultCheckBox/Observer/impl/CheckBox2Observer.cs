@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace DefaultCheckBox.Observer.impl
 {
@@ -6,19 +7,23 @@ namespace DefaultCheckBox.Observer.impl
     {
         private StateDefaultImpl _state;
         private System.Windows.Forms.CheckBox _checkBox;
-        private int observValue;
-        // 이게 맞나? 코드 결합성이 너무 심한거 같은데...
 
         public CheckBox2Observer(StateDefaultImpl state, CheckBox checkBox)
         {
             _state = state;
-            _checkBox = checkBox;
             state.registerObserver(this);
+            _checkBox = checkBox;
+            _checkBox.CheckedChanged += new EventHandler(chekcedChanged);
         }
 
         public void update()
         {
-            _checkBox 
+            _checkBox.Checked = _state.ChkBox2Checked;
+        }
+
+        private void chekcedChanged(object sender, EventArgs args)
+        {
+            _state.ChkBox2Checked = _checkBox.Checked;
         }
     }
 }
