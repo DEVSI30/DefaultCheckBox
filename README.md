@@ -18,3 +18,8 @@ I use Observer pattern for this prgoram.
 
 헤드퍼스트 디자인 패턴 보다가 옵저버 패턴 보는데, 이걸 구현하는데 쓸 수 있을거 같아서 써봤는데
 생각보다 찰떡같이 처리되지 않은 것 같아 아쉽습니다. 
+
+
+## use
+
+![움짤](./DefaultCheckBox/resource/readme.gif) 
